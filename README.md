@@ -62,7 +62,6 @@ $ yarn build
 │   ├── utils/                     # 工具库
 │   ├── global.less                # 全局样式
 │   └── app.tsx                    # 应用入口脚本
-├── build.json                     # 工程配置
 ├── README.md
 ├── package.json
 ├── .editorconfig
