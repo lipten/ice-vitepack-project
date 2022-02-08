@@ -13,6 +13,7 @@ ice.js有许多约定式的自带功能，而摒弃自带功能有两方面原�
 * react-router-dom 5.2.0
 * dva 2.4.1
 * ice.js 2.0.0
+
 演示用第三方库：
 * monaco-editor
 * echarts
@@ -86,9 +87,10 @@ ice的工程配置仅支持以下webpack配置：
 * publicPath
 * proxy
 * devServer
+
 所以对于webpack的其他配置项（如：optimization、module、externals）则只能通过ice插件定制工程能力来配置
 
-本项目中的config/plugin-config/src/index.ts使用了optimization处理chunks分包的场景，可以作为参考，当修改完配置需要执行命令:
+本项目中的[config/plugin-config/src/index.ts](https://github.com/lipten/ice-vitepack-project/blob/master/config/plugin-config/src/index.ts)使用了optimization处理chunks分包的场景，可以作为参考，当修改完配置需要执行命令:
 ```bash
 # 执行一下命令才能生效配置
 yarn update-plugin
@@ -119,11 +121,10 @@ new URL(`../../../src/${path}`, import.meta.url).href
 可以做一下兼容webpack的处理
 
 ```JavaScript
-export const importPath = (path) => {
-  window.IS_VITE
-    ? new URL(`../../../src/${path}`, import.meta.url).href
-    : require(`@/assets/images/${path}`);
-}
+export const importAssetsPath = (path: string) => {
+  return window.IS_VITE ? new URL(`../../../src/assets/${path}`, import.meta.url).href : require(`../assets/${path}`);
+};
+
 ```
 ### 动态加载模块import().then()
 
