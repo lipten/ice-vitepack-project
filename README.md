@@ -36,8 +36,8 @@ $ yarn build
 
 ```md
 ├── config/                        # 工程配置
-│   ├── plugin-config/             # 自定义ice插件实现进阶配置
-│   └── build.config.js            # ice配置
+│   ├── build.config.js            # ice配置
+│   └── build.plugin.js           # 自定义ice插件实现进阶配置
 ├── public/                        
 │   ├── index.html                 # 应用入口 HTML
 │   └── favicon.png                # Favicon
@@ -90,11 +90,7 @@ ice的工程配置仅支持以下webpack配置：
 
 所以对于webpack的其他配置项（如：optimization、module、externals）则只能通过ice插件定制工程能力来配置
 
-本项目中的[config/plugin-config/src/index.ts](https://github.com/lipten/ice-vitepack-project/blob/master/config/plugin-config/src/index.ts)使用了optimization处理chunks分包的场景，可以作为参考，当修改完配置需要执行命令:
-```bash
-# 执行一下命令才能生效配置
-yarn update-plugin
-```
+本项目中的[config/build.plugin.js](https://github.com/lipten/ice-vitepack-project/blob/master/config/build.plugin.js)使用了optimization处理chunks分包的场景，可以作为参考
 ### 第三方库不兼容ESModule：
 
 vite只能加载ESModule规范的模块，对于其他模块规范文件需要特殊处理，vite的依赖预构建默认会找package.json里的依赖包自动处理兼容的写法，所以第三方库我们可以放到src路径下，通过**yarn add ./src/xxx** 添加本地库

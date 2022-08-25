@@ -1,6 +1,6 @@
-import type { IPlugin } from 'build-scripts';
 
-const plugin: IPlugin = ({ onGetWebpackConfig }) => {
+
+const plugin = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
     console.log('plugin-loader ============================================');
     // config.mode('production');
@@ -24,4 +24,4 @@ const plugin: IPlugin = ({ onGetWebpackConfig }) => {
   });
 };
 
-export default plugin;
+module.exports = plugin;

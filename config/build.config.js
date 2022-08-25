@@ -1,5 +1,5 @@
 import monacoEditorPlugin from 'vite-plugin-monaco-editor';
-
+import path from 'path';
 module.exports = {
   // 根究环境改变配置
   modeConfig: {
@@ -60,6 +60,6 @@ module.exports = {
         locales: ['zh-cn'],
       },
     ],
-    ['plugin-config'],
+    [path.resolve(__dirname, './build.plugin.js'), {}],
   ],
 };
