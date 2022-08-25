@@ -48,12 +48,12 @@ $ yarn build
 │   ├── layouts/                   # 布局组件
 │   │   └── BasicLayout/
 │   │       ├── index.tsx
-│   ├── pages/                     # 页面
-│   │   └── Home/                  # home 页面，约定路由转成小写
+│   ├── pages/                     # 页面组件目录
+│   │   └── Home/                  # home 页面
 │   │       ├── components/        # 页面级自定义业务组件
-│   │       ├── index.tsx      # 页面入口
-│   │       └── index.module.less  # 页面样式文件
-│   ├──routes/                    # 路由配置（在工程配置指定了路径）
+│   │       ├── index.tsx
+│   │       └── index.module.less 
+│   ├──routes/                     # 路由配置（在工程配置指定了路径）
 │   │   └── index.tsx              
 │   ├── services/                  # api接口
 │   ├── models/                    # 状态管理模型
@@ -62,7 +62,6 @@ $ yarn build
 │   ├── utils/                     # 工具库
 │   ├── global.less                # 全局样式
 │   └── app.tsx                    # 应用入口脚本
-├── build.json                     # 工程配置
 ├── README.md
 ├── package.json
 ├── .editorconfig
