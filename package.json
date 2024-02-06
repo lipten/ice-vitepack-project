@@ -4,6 +4,7 @@
   "description": "Ant Design and icejs, use TypeScript.",
   "scripts": {
     "start": "cross-env MODE=vite icejs start --config config/build.config.js  --mode vite",
+    "start:webpack": "cross-env MODE=vite icejs start --config config/build.config.js  --mode webpack",
     "build": "cross-env MODE=webpack icejs build --config config/build.config.js  --mode webpack",
     "server": "node server.js",
     "update-plugin": "cd config/plugin-config && yarn build && cd .. && yarn add -D ./config/plugin-config",
@@ -26,7 +27,7 @@
     "http-proxy-middleware": "^2.0.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "monaco-editor": "^0.31.1",
+    "monaco-editor": "^0.45.0",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

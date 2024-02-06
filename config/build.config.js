@@ -1,12 +1,15 @@
 import monacoEditorPlugin from 'vite-plugin-monaco-editor';
 import path from 'path';
+
 module.exports = {
   // 根究环境改变配置
   modeConfig: {
     // 本地环境用vite
     vite: {
       vite: true,
-      vitePlugins: [monacoEditorPlugin()],
+      vitePlugins: [
+        monacoEditorPlugin(),
+      ],
     },
     // 构建用webpack
     webpack: {

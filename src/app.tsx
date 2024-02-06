@@ -11,6 +11,7 @@ import dva from 'dva';
 import createLoading from 'dva-loading';
 import models from '@/models';
 import { createBrowserHistory } from 'history';
+import Dashboard from '@/pages/Dashboard'
 window.IS_VITE = APP_MODE === 'vite';
 
 const app = dva({
@@ -24,12 +25,7 @@ models.forEach((model) => {
 
 app.router(() => (
   <StrictMode>
-    <Suspense fallback={<Spin size="large" className="layout__loading" />}>
-      <BrowserRouter>
-        <ResolveHistory />
-        {renderRoutes(routes)}
-      </BrowserRouter>
-    </Suspense>
+    <Dashboard />
   </StrictMode>
 ));
 app.start('#root');
